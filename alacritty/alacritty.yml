@@ -1,0 +1,11 @@
+import:
+  - ~/.config/alacritty/nightfox_alacritty.yml
+window:
+  decorations: buttonless
+  padding:
+    x: 10
+    y: 10
+font:
+  normal:
+    family: Hack Nerd Font Mono
+  size: 14.0

@@ -1,0 +1,21 @@
+launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+sudo yabai --load-sa
+
+yabai -m config window_gap 4
+yabai -m config layout bsp
+yabai -m config window_shadow off
+yabai -m config window_opacity off
+yabai -m config window_border_blur off
+yabai -m config normal_window_border_color 0x00686483
+yabai -m config active_window_border_color 0xFF9CC086
+yabai -m config window_border on
+yabai -m config window_border_radius 12
+yabai -m config window_border_width 4
+yabai -m config external_bar all:30:0
+
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
+
+yabai -m signal --add event=space_changed action='echo "onSpaceChanged=${YABAI_SPACE_ID}" | nc -U tmp/statusbar'

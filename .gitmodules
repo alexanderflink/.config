@@ -1,0 +1,3 @@
+[submodule "httpie"]
+	path = httpie
+	url = https://github.com/alexanderflink/httpie-config
