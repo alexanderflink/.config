@@ -2,6 +2,9 @@ eval (brew shellenv)
 fnm env --use-on-cd --log-level quiet | source
 
 if status is-interactive
+    # init prompt
+    starship init fish | source
+
     # git
     abbr --add ga git add
     abbr --add gb git branch
