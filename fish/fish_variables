@@ -6,6 +6,7 @@ SETUVAR Z_DATA:/Users/alexanderflink/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/alexanderflink/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/alexanderflink\x24
 SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gb:git\x20branch
 SETUVAR _fish_abbr_gcm:git\x20commit
@@ -17,6 +18,11 @@ SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_nv:nvim\x20\x2e
 SETUVAR _fish_abbr_s:say
 SETUVAR _fish_abbr_za:zellij\x20attach
+SETUVAR _fish_abbr_zj:zellij
+SETUVAR _fish_abbr_zja:zellij\x20attach
+SETUVAR _fish_abbr_zjk:zellij\x20kill\x2dsession
+SETUVAR _fish_abbr_zjka:zellij\x20kill\x2dall\x2dsessions
+SETUVAR _fish_abbr_zjls:zellij\x20list\x2dsessions
 SETUVAR _fish_abbr_zk:zellij\x20kill\x2dsession
 SETUVAR _fish_abbr_zka:zellij\x20kill\x2dall\x2dsessions
 SETUVAR _fish_abbr_zls:zellij\x20list\x2dsessions

@@ -6,6 +6,7 @@ if status is-interactive
     starship init fish | source
 
     # git
+    abbr --add g git
     abbr --add ga git add
     abbr --add gb git branch
     abbr --add gcm git commit
@@ -16,10 +17,11 @@ if status is-interactive
     abbr --add gsw git switch
 
     # zellij
-    abbr --add za zellij attach
-    abbr --add zka zellij kill-all-sessions
-    abbr --add zk zellij kill-session
-    abbr --add zls zellij list-sessions
+    abbr --add zj zellij
+    abbr --add zja zellij attach
+    abbr --add zjka zellij kill-all-sessions
+    abbr --add zjk zellij kill-session
+    abbr --add zjls zellij list-sessions
 
     # neovim
     abbr --add nv nvim .
