@@ -13,7 +13,6 @@ vim.keymap.set(
 )
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
 vim.keymap.set("t", "<C-W>", "<C-\\><C-u><C-W>", opts)
-
 vim.keymap.set({ "i", "n" }, "<C-t>n", "<Esc>:tabnew<CR>", { remap = true, silent = true })
 vim.keymap.set({ "i", "n" }, "<C-t>x", "<Esc>:tabclose<CR>", { remap = true, silent = true })
 vim.keymap.set({ "i", "n" }, "<C-t>h", "<Esc>:tabprevious<CR>", { remap = true, silent = true })
@@ -28,3 +27,4 @@ vim.keymap.set({ "i", "n" }, "<C-t>7", "<Esc>7gt", { remap = true, silent = true
 vim.keymap.set({ "i", "n" }, "<C-t>8", "<Esc>8gt", { remap = true, silent = true })
 vim.keymap.set({ "i", "n" }, "<C-t>9", "<Esc>9gt", { remap = true, silent = true })
 vim.keymap.set({ "n" }, "<leader>tt", ":ToggleTerm direction=float<CR>")
+vim.keymap.set({ "i" }, "jk", "<Esc>", { noremap = true, silent = true })
