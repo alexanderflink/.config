@@ -5,7 +5,10 @@ window:
   padding:
     x: 10
     y: 10
+  option_as_alt: Both
 font:
   normal:
     family: Hack Nerd Font Mono
   size: 14.0
+key_bindings:
+  - {key: I, mods: Control, action: ToggleViMode}
