@@ -48,23 +48,6 @@ return require("packer").startup(function(use)
 		},
 	})
 	use("github/copilot.vim")
-	-- use({
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	event = "VimEnter",
-	-- 	config = function()
-	-- 		vim.defer_fn(function()
-	-- 			require("copilot").setup()
-	-- 		end, 100)
-	-- 	end,
-	-- })
-
-	-- use({
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	after = { "copilot.lua" },
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup()
-	-- 	end,
-	-- })
 	use("tpope/vim-abolish")
 	use({
 		"folke/trouble.nvim",
@@ -87,4 +70,5 @@ return require("packer").startup(function(use)
 			require("toggleterm").setup()
 		end,
 	})
+	use("nvim-orgmode/orgmode")
 end)
