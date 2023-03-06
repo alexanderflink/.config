@@ -1,4 +1,12 @@
-eval (brew shellenv)
+if test -e /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv)
+end
+
+if test -e /usr/local/bin/brew
+    eval (/usr/local/bin/brew shellenv)
+end
+
+# eval (brew shellenv)
 fnm env --use-on-cd --log-level quiet | source
 
 if status is-interactive
