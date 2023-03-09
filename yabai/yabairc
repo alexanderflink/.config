@@ -16,6 +16,7 @@ yabai -m config window_border_width 4
 yabai -m config external_bar all:30:0
 
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="Pomatez" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
 
 yabai -m signal --add event=space_changed action='echo "onSpaceChanged=${YABAI_SPACE_ID}" | nc -U tmp/statusbar'
