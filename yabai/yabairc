@@ -12,7 +12,7 @@ yabai -m config normal_window_border_color 0x00686483
 yabai -m config active_window_border_color 0xFF9CC086
 yabai -m config window_border on
 yabai -m config window_border_radius 12
-yabai -m config window_border_width 4
+yabai -m config window_border_width 2
 yabai -m config external_bar all:30:0
 
 yabai -m rule --add app="^System Settings$" manage=off
