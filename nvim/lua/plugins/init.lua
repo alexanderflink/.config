@@ -142,7 +142,26 @@ return {
   },
 
   -- nicer statusline
-  { "nvim-lualine/lualine.nvim", lazy = false, config = true },
+  {
+    "nvim-lualine/lualine.nvim",
+    lazy = false,
+    config = function()
+      require("lualine").setup({
+        options = {
+          globalstatus = true,
+        },
+        sections = {
+          lualine_c = {
+            {
+              "filename",
+              file_status = true,
+              path = 3,
+            },
+          },
+        },
+      })
+    end,
+  },
 
   -- surround things
   { "kylechui/nvim-surround", lazy = false, config = true },
