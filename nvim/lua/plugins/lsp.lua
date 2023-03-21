@@ -19,6 +19,9 @@ return {
       -- Snippets
       { 'L3MON4D3/LuaSnip' },             -- Required
       { 'rafamadriz/friendly-snippets' }, -- Optional
+
+      -- Formatting
+      { 'jose-elias-alvarez/null-ls.nvim' }
     },
     config = function()
       require('mason').setup()
@@ -152,6 +155,15 @@ return {
           { name = 'copilot' }
         },
       }
+
+      -- formatting setup
+      local null_ls = require("null-ls")
+
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.prettierd,
+        },
+      })
     end
   },
 }
