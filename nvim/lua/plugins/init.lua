@@ -247,4 +247,32 @@ return {
 
   -- git gutters
   { "lewis6991/gitsigns.nvim", config = true },
+
+  -- neorg organization plugin
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    opts = {
+      load = {
+        ["core.defaults"] = {},       -- Loads default behaviour
+        ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.norg.dirman"] = {      -- Manages Neorg workspaces
+          config = {
+            default_workspace = "default",
+            workspaces = {
+              default = "~/Library/Mobile Documents/com~apple~CloudDocs/Neorg/default",
+              work = "~/Library/Mobile Documents/com~apple~CloudDocs/Neorg/work",
+              private = "~/Library/Mobile Documents/com~apple~CloudDocs/Neorg/private"
+            },
+          },
+        },
+        ["core.keybinds"] = {
+          config = {
+            default_keybinds = true,
+          }
+        }
+      },
+    },
+    dependencies = { "nvim-lua/plenary.nvim" },
+  }
 }

@@ -18,6 +18,7 @@
   "mini.comment": { "branch": "main", "commit": "f045998636c6fd746297220b8c692bf1e91568cb" },
   "mini.pairs": { "branch": "main", "commit": "771c08bd313614c7e9a1904d277ac76eb226f674" },
   "mini.sessions": { "branch": "main", "commit": "83f6023f765d21d66dd422127a76127238ebebe4" },
+  "neorg": { "branch": "main", "commit": "532548b9f444bd1ae6f2efd3edd842282cc79659" },
   "neoscroll.nvim": { "branch": "master", "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93" },
   "nightfox.nvim": { "branch": "main", "commit": "53cdaa583138698f4a0a4a9d2abaf761c8960407" },
   "null-ls.nvim": { "branch": "main", "commit": "13dd1fc13063681ca7e039436c88f6eca7e3e937" },

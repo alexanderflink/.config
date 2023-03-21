@@ -1,6 +1,6 @@
 -- set leader key
 vim.g.mapleader = " "
-vim.g.localmapleader = " "
+vim.g.maplocalleader = " "
 vim.wo.relativenumber = true
 -- highlight on yank
 vim.api.nvim_command("au TextYankPost * silent! lua vim.highlight.on_yank()")
