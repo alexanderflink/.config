@@ -164,7 +164,7 @@ return {
   },
 
   -- surround things
-  { "kylechui/nvim-surround", lazy = false, config = true },
+  { "kylechui/nvim-surround",  lazy = false, config = true },
 
   -- add more text objects, like functions and arguments
   {
@@ -179,111 +179,6 @@ return {
     "echasnovski/mini.pairs",
     config = function()
       require("mini.pairs").setup()
-    end,
-  },
-
-  -- Copilot
-  {
-    "zbirenbaum/copilot.lua",
-    dependencies = { "zbirenbaum/copilot-cmp" },
-    config = function()
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-
-      require("copilot_cmp").setup()
-    end,
-  },
-
-  -- LSP (language servers)
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    lazy = false,
-    branch = "v2.x",
-    dependencies = {
-      -- LSP Support
-      { "neovim/nvim-lspconfig" }, -- Required
-      { "williamboman/mason.nvim" }, -- Optional
-      { "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-      -- Autocompletion
-      { "hrsh7th/nvim-cmp" }, -- Required
-      { "hrsh7th/cmp-nvim-lsp" }, -- Required
-      { "L3MON4D3/LuaSnip" }, -- Required
-    },
-    config = function()
-      local lsp = require("lsp-zero").preset({})
-
-      lsp.ensure_installed({
-        "astro",
-        "bashls",
-        "cssls",
-        "cssmodules_ls",
-        "eslint",
-        "graphql",
-        "html",
-        "jsonls",
-        "lua_ls",
-        "pyright",
-        "rust_analyzer",
-        "tsserver",
-      })
-
-      lsp.on_attach(function(client, bufnr)
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, remap = false, desc = "Go to definition" })
-        vim.keymap.set("n", "H", vim.lsp.buf.hover, { buffer = bufnr, remap = false, desc = "Hover" })
-        vim.keymap.set(
-          "n",
-          "<leader>cd",
-          vim.diagnostic.open_float,
-          { buffer = bufnr, remap = false, desc = "Show diagnostic" }
-        )
-        vim.keymap.set(
-          "n",
-          "<leader>ca",
-          vim.lsp.buf.code_action,
-          { buffer = bufnr, remap = false, desc = "Code actions" }
-        )
-        vim.keymap.set(
-          "n",
-          "<leader>cr",
-          vim.lsp.buf.references,
-          { buffer = bufnr, remap = false, desc = "References" }
-        )
-        vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, { buffer = bufnr, remap = false, desc = "Rename" })
-      end)
-
-      -- Configure lua language server for neovim
-      require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls({
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-          },
-        },
-      }))
-
-      -- setup cmp with copilot
-      local cmp = require("cmp")
-
-      cmp.setup({
-        sources = {
-          { name = "copilot" },
-          { name = "nvim_lsp" },
-        },
-        mapping = {
-          ["<CR>"] = cmp.mapping.confirm({
-            -- documentation says this is important.
-            -- I don't know why.
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-          }),
-        },
-      })
-
-      lsp.setup()
     end,
   },
 
@@ -325,58 +220,58 @@ return {
   },
 
   -- auto detect indent levels
-  {
-    "tpope/vim-sleuth",
-    lazy = false,
-  },
+  -- {
+  --   "tpope/vim-sleuth",
+  --   lazy = false,
+  -- },
 
   -- formatting
-  {
-    "mhartington/formatter.nvim",
-    lazy = false,
-    config = function()
-      require("formatter").setup({
-        filetype = {
-          lua = {
-            require("formatter.filetypes.lua").stylua,
-          },
-          typescriptreact = {
-            require("formatter.filetypes.typescriptreact").prettier,
-          },
-          typescript = {
-            require("formatter.filetypes.typescriptreact").prettier,
-          },
-          javascript = {
-            require("formatter.filetypes.javascript").prettier,
-          },
-          html = {
-            require("formatter.filetypes.html").prettier,
-          },
-          javascriptreact = {
-            require("formatter.filetypes.javascriptreact").prettier,
-          },
-          rust = function()
-            return {
-              exe = "rustfmt --edition 2021",
-              stdin = true,
-            }
-          end,
-          -- requires https://github.com/withastro/prettier-plugin-astro to be installed globally
-          astro = function()
-            return {
-              exe = "prettier --parser astro",
-              args = { util.escape_path(util.get_current_buffer_file_path()) },
-              stdin = true,
-              -- not yet implemented https://github.com/mhartington/formatter.nvim#try_node_modules
-              try_node_modules = true,
-            }
-          end,
-        },
-      })
-
-      vim.api.nvim_create_autocmd({ "BufWritePost" }, { command = "FormatWrite" })
-    end,
-  },
+  -- {
+  --   "mhartington/formatter.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require("formatter").setup({
+  --       filetype = {
+  --         lua = {
+  --           require("formatter.filetypes.lua").stylua,
+  --         },
+  --         typescriptreact = {
+  --           require("formatter.filetypes.typescriptreact").prettier,
+  --         },
+  --         typescript = {
+  --           require("formatter.filetypes.typescriptreact").prettier,
+  --         },
+  --         javascript = {
+  --           require("formatter.filetypes.javascript").prettier,
+  --         },
+  --         html = {
+  --           require("formatter.filetypes.html").prettier,
+  --         },
+  --         javascriptreact = {
+  --           require("formatter.filetypes.javascriptreact").prettier,
+  --         },
+  --         rust = function()
+  --           return {
+  --             exe = "rustfmt --edition 2021",
+  --             stdin = true,
+  --           }
+  --         end,
+  --         -- requires https://github.com/withastro/prettier-plugin-astro to be installed globally
+  --         astro = function()
+  --           return {
+  --             exe = "prettier --parser astro",
+  --             args = { util.escape_path(util.get_current_buffer_file_path()) },
+  --             stdin = true,
+  --             -- not yet implemented https://github.com/mhartington/formatter.nvim#try_node_modules
+  --             try_node_modules = true,
+  --           }
+  --         end,
+  --       },
+  --     })
+  --
+  --     vim.api.nvim_create_autocmd({ "BufWritePost" }, { command = "FormatWrite" })
+  --   end,
+  -- },
 
   -- git gutters
   { "lewis6991/gitsigns.nvim", config = true },

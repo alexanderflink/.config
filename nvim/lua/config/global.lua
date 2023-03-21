@@ -17,6 +17,9 @@ vim.opt.scrolloff = 5
 -- indendation
 vim.opt.autoindent = false
 vim.opt.smartindent = false
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 -- global key mappings
 vim.keymap.set({ "i" }, "jk", "<Esc>")
