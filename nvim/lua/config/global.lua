@@ -15,7 +15,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 5
 
 -- indendation
-vim.opt.autoindent = false
+vim.opt.autoindent = true
 vim.opt.smartindent = false
 vim.opt.expandtab = true
 vim.opt.tabstop = 2

@@ -43,7 +43,7 @@ return {
           enable = true,
         },
         indent = {
-          enable = true,
+          enable = false,
         },
         context_commentstring = {
           enable = true,
@@ -220,10 +220,10 @@ return {
   },
 
   -- auto detect indent levels
-  -- {
-  --   "tpope/vim-sleuth",
-  --   lazy = false,
-  -- },
+  {
+    "tpope/vim-sleuth",
+    lazy = false,
+  },
 
   -- formatting
   -- {
