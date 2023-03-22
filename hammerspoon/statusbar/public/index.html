@@ -11,17 +11,21 @@
       *::after {
         box-sizing: border-box;
       }
+
       * {
         margin: 0;
       }
+
       html,
       body {
         height: 100%;
       }
+
       body {
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
       }
+
       img,
       picture,
       video,
@@ -30,12 +34,14 @@
         display: block;
         max-width: 100%;
       }
+
       input,
       button,
       textarea,
       select {
         font: inherit;
       }
+
       p,
       h1,
       h2,
@@ -47,30 +53,43 @@
       }
     </style>
     <style>
-            body {
-              background: #242038;
-              color: #e1ddf6;
-              font-family: Hack Nerd Font Mono;
-              font-size: 13px;
-            }
+      body {
+        background: #242038;
+        color: #e1ddf6;
+        font-family: Hack Nerd Font Mono;
+        font-size: 13px;
+        overflow: hidden;
+      }
 
-            main {
-              display: flex;
-              align-items: center;
-              padding: 0 10px;
-              height: 100%;
-              gap: 10px;
-            }
+      main {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 100%;
+        gap: 10px;
+      }
 
-            .icon {
-              font-size: 32px;
-            }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
 
-            .flex-grow {
-              flex-grow: 1;
-            }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      }
+
+      .icon {
+        font-size: 32px;
+      }
+
+      .flex-grow {
+        flex-grow: 1;
+      }
       }
     </style>
   </head>
+
   <body></body>
 </html>

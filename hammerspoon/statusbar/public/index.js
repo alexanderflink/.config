@@ -2,12 +2,12 @@ import { createSignal, onCleanup } from 'https://cdn.skypack.dev/solid-js'
 import { render } from 'https://cdn.skypack.dev/solid-js/web'
 import html from 'https://cdn.skypack.dev/solid-js/html'
 
-window.updateState = () => {}
+window.updateState = () => { }
 
 const App = () => {
   const [state, setState] = createSignal(0)
 
-  window.updateState = function (data) {
+  window.updateState = function(data) {
     setState((prev) => ({ ...prev, ...data }))
   }
 
