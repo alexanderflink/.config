@@ -16,6 +16,7 @@ const App = () => {
     <span> ${() => state().user} </span>
     <span>${() => state().time}</span>
     <div class="flex-grow" />
+    <span>Now playing: ${() => state().nowPlaying}</span>
     <span>CPU: ${() => (Math.round(state().cpu * 10) / 10).toFixed(1)}%</span>
   </main>`
 }
