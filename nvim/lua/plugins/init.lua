@@ -172,7 +172,7 @@ return {
   },
 
   -- surround things
-  { "kylechui/nvim-surround",  lazy = false, config = true },
+  { "kylechui/nvim-surround", lazy = false, config = true },
 
   -- add more text objects, like functions and arguments
   {
@@ -254,9 +254,9 @@ return {
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-        ["core.defaults"] = {},       -- Loads default behaviour
+        ["core.defaults"] = {}, -- Loads default behaviour
         ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.norg.dirman"] = {      -- Manages Neorg workspaces
+        ["core.norg.dirman"] = { -- Manages Neorg workspaces
           config = {
             default_workspace = "default",
             workspaces = {
@@ -274,5 +274,14 @@ return {
       },
     },
     dependencies = { "nvim-lua/plenary.nvim" },
-  }
+  },
+
+  -- smarter substitue, among other things
+  { "tpope/vim-abolish" },
+
+  -- todo comments
+  { "folke/todo-comments.nvim", config = true },
+
+  -- list of diagnostics etc
+  { "folke/trouble.nvim", config = true },
 }
