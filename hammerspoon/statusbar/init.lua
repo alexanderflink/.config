@@ -67,8 +67,8 @@ webviewController:setCallback(onWebviewReady)
 -- listen for messages on unix socket
 local server = hs.socket
 		.new(function(data)
-			local mode = string.gsub(data, "\n", "")
-			updateWebViewState({ mode = mode })
+			local json = string.gsub(data, "\n", "")
+			webview:evaluateJavaScript("window.updateState(" .. json .. ")")
 		end)
 		:listen("/tmp/statusbar")
 
