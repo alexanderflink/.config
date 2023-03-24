@@ -1,5 +1,6 @@
 local getUser = require("statusbar/lua/getUser")
 local getTime = require("statusbar/lua/getTime")
+local getDate = require("statusbar/lua/getDate")
 local getNowPlaying = require("statusbar/lua/getNowPlaying")
 
 local webserver = hs.httpserver.hsminweb.new("./statusbar/public")
@@ -22,6 +23,15 @@ webview:url("http://localhost:" .. webserver:port())
 webview:bringToFront(false)
 webview:show()
 
+local function onScreenChange()
+	primaryScreen = hs.screen.primaryScreen()
+	frame = primaryScreen:frame()
+
+	webview:frame({ x = 0, y = 0, w = frame.w, h = 24 })
+end
+
+ScreenWatcher = hs.screen.watcher.newWithActiveScreen(onScreenChange):start()
+
 local function updateWebViewState(state)
 	local json = hs.json.encode(state)
 	webview:evaluateJavaScript("window.updateState(" .. json .. ")")
@@ -40,11 +50,10 @@ end)
 UpdateState = hs.timer.doEvery(1, function()
 	local user = getUser()
 	local time = getTime()
+	local date = getDate()
 	local nowPlaying = getNowPlaying()
 
-	print(hs.inspect(nowPlaying))
-
-	updateWebViewState({ time = time, user = user, nowPlaying = nowPlaying })
+	updateWebViewState({ time = time, user = user, nowPlaying = nowPlaying, date = date })
 end)
 
 local function onWebviewReady()
