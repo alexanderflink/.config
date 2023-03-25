@@ -3,8 +3,8 @@ import:
 window:
   decorations: buttonless
   padding:
-    x: 10
-    y: 10
+    x: 0
+    y: 0
   option_as_alt: Both
 font:
   normal:

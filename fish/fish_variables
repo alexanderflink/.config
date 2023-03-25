@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:nvim
 SETUVAR --export --path ENVS_PATH:/Users/alexanderflink/\x2econfig/fish/envs
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
