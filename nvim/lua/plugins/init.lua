@@ -172,25 +172,13 @@ return {
   },
 
   -- surround things
-  { "kylechui/nvim-surround", lazy = false, config = true },
+  { "kylechui/nvim-surround",  lazy = false, config = true },
 
   -- add more text objects, like functions and arguments
   {
     "echasnovski/mini.ai",
     config = function()
       require("mini.ai").setup()
-    end,
-  },
-
-  -- add sessions
-  {
-    "echasnovski/mini.sessions",
-    config = function()
-      require("mini.sessions").setup({
-        autoread = true,
-        autowrite = true,
-        file = ''
-      })
     end,
   },
 
@@ -254,9 +242,9 @@ return {
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.defaults"] = {},       -- Loads default behaviour
         ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.norg.dirman"] = { -- Manages Neorg workspaces
+        ["core.norg.dirman"] = {      -- Manages Neorg workspaces
           config = {
             default_workspace = "default",
             workspaces = {
@@ -283,5 +271,5 @@ return {
   { "folke/todo-comments.nvim", config = true },
 
   -- list of diagnostics etc
-  { "folke/trouble.nvim", config = true },
+  { "folke/trouble.nvim",       config = true },
 }
