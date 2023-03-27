@@ -1,5 +1,6 @@
 // Nightfox Theme:
 // https://github.com/edeneast/nightfox.nvim
+default_layout "compact"
 
 themes {
   dayfox {
