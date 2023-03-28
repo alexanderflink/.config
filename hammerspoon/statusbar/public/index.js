@@ -2,17 +2,13 @@ import { createSignal } from 'https://cdn.skypack.dev/solid-js'
 import { render } from 'https://cdn.skypack.dev/solid-js/web'
 import html from 'https://cdn.skypack.dev/solid-js/html'
 
-window.updateState = () => {}
+window.updateState = () => { }
 
 const App = () => {
   const [state, setState] = createSignal({ pomodoroRunning: false })
 
-  window.updateState = function (data) {
+  window.updateState = function(data) {
     setState((prev) => ({ ...prev, ...data }))
-  }
-
-  function handlePomodoroClick() {
-    setState((prev) => ({ ...prev, pomodoroRunning: !prev.pomodoroRunning }))
   }
 
   return html`<main>
@@ -20,10 +16,11 @@ const App = () => {
 
     <span class="separator"></span>
 
-    <span class=${() => (state().pomodoroRunning ? 'rotate' : '')}>🍅</span>
-    <span class="icon" onClick=${handlePomodoroClick}
-      >${() => (state().pomodoroRunning ? '' : '')}</span
+    <span class=${() => (!state().pomodoro?.paused ? 'rotate' : '')}
+      >${() => (state().pomodoro?.mode === 'W' ? '🍅' : '☕️')}${() =>
+      state().pomodoro?.paused ? '⏸️' : ''}</span
     >
+    <span>${() => state().pomodoro?.time}</span>
 
     <span class="separator"></span>
 

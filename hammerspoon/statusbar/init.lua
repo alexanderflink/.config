@@ -2,6 +2,7 @@ local getUser = require("statusbar/lua/getUser")
 local getTime = require("statusbar/lua/getTime")
 local getDate = require("statusbar/lua/getDate")
 local getNowPlaying = require("statusbar/lua/getNowPlaying")
+local getPomo = require("statusbar/lua/getPomo")
 
 local webserver = hs.httpserver.hsminweb.new("./statusbar/public")
 webserver:port(8080)
@@ -52,8 +53,9 @@ UpdateState = hs.timer.doEvery(1, function()
 	local time = getTime()
 	local date = getDate()
 	local nowPlaying = getNowPlaying()
+	local pomodoro = getPomo()
 
-	updateWebViewState({ time = time, user = user, nowPlaying = nowPlaying, date = date })
+	updateWebViewState({ time = time, user = user, nowPlaying = nowPlaying, date = date, pomodoro = pomodoro })
 end)
 
 local function onWebviewReady()
