@@ -1,13 +1,13 @@
-import { createSignal } from 'https://cdn.skypack.dev/solid-js'
-import { render } from 'https://cdn.skypack.dev/solid-js/web'
-import html from 'https://cdn.skypack.dev/solid-js/html'
+import { createSignal } from 'https://cdn.jsdelivr.net/npm/solid-js@1.6.16/+esm'
+import { render } from 'https://cdn.jsdelivr.net/npm/solid-js@1.6.16/web/+esm'
+import html from 'https://cdn.jsdelivr.net/npm/solid-js@1.6.16/html/+esm'
 
-window.updateState = () => { }
+window.updateState = () => {}
 
 const App = () => {
   const [state, setState] = createSignal({ pomodoroRunning: false })
 
-  window.updateState = function(data) {
+  window.updateState = function (data) {
     setState((prev) => ({ ...prev, ...data }))
   }
 
@@ -18,7 +18,7 @@ const App = () => {
 
     <span class=${() => (!state().pomodoro?.paused ? 'rotate' : '')}
       >${() => (state().pomodoro?.mode === 'W' ? '🍅' : '☕️')}${() =>
-      state().pomodoro?.paused ? '⏸️' : ''}</span
+        state().pomodoro?.paused ? '⏸️' : ''}</span
     >
     <span>${() => state().pomodoro?.time}</span>
 
