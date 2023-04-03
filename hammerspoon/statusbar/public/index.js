@@ -16,7 +16,7 @@ const App = () => {
 
     <span class="separator"></span>
 
-    <span class=${() => (!state().pomodoro?.paused ? 'rotate' : '')}
+    <span
       >${() => (state().pomodoro?.mode === 'W' ? '🍅' : '☕️')}${() =>
         state().pomodoro?.paused ? '⏸️' : ''}</span
     >
