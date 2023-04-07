@@ -281,4 +281,6 @@ return {
 
   -- list of diagnostics etc
   { "folke/trouble.nvim", config = true },
+
+  { "wakatime/vim-wakatime" }
 }
