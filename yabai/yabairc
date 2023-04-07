@@ -30,3 +30,7 @@ yabai -m signal --add event=space_changed action='echo "onSpaceChanged=${YABAI_S
 # focus previous window when closing current window
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+yabai -m rule --add app="Brave Browser" space=1
+yabai -m rule --add app="Alacritty" space=2
+yabai -m rule --add app="Spotify" space=3
