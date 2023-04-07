@@ -3,6 +3,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 sudo yabai --load-sa
 
+# configure yabai
 yabai -m config window_gap 4
 yabai -m config layout bsp
 yabai -m config window_shadow off
@@ -15,8 +16,14 @@ yabai -m config window_border_radius 12
 yabai -m config window_border_width 2
 yabai -m config external_bar all:30:0
 
+# dont manage these apps
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="Pomatez" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
 
+# press option + space to switch to terminal space
 yabai -m signal --add event=space_changed action='echo "onSpaceChanged=${YABAI_SPACE_ID}" | nc -U tmp/statusbar'
+
+# focus previous window when closing current window
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
