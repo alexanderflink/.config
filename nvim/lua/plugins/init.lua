@@ -1,9 +1,9 @@
 return {
   -- nightfox theme
   {
-    "EdenEast/nightfox.nvim",
+    "shaunsingh/nord.nvim",
     config = function()
-      vim.cmd("colorscheme duskfox")
+      vim.cmd("colorscheme nord")
     end,
   },
 
