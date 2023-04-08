@@ -65,7 +65,18 @@ done
 sketchybar --add item front_app left                               \
            --set front_app       script="$PLUGIN_DIR/front_app.sh" \
                                  icon.drawing=off                  \
-           --subscribe front_app front_app_switched
+           --subscribe front_app front_app_switched                \
+           --add item skhd_mode left                               \
+           --set skhd_mode label="default" \
+           icon.drawing=off \
+           label.color=0xff2E3440 \
+           label.width=80 \
+           label.align=center \
+           background.corner_radius=5 \
+           background.height=24 \
+           width=80 \
+           background.drawing=on \
+           background.color=0xffA3BE8C \
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.

@@ -1,8 +1,8 @@
 # define modes
-:: default : echo "mode=default" | nc -U tmp/statusbar
-:: window_mode : echo "mode=window" | nc -U tmp/statusbar
-:: space_mode : echo "mode=space" | nc -U tmp/statusbar
-:: display_mode : echo "mode=display" | nc -U tmp/statusbar
+:: default : ~/.config/skhd/default_mode.sh
+:: window_mode : ~/.config/skhd/window_mode.sh
+:: space_mode : ~/.config/skhd/space_mode.sh
+:: display_mode : ~/.config/skhd/display_mode.sh
 
 window_mode < escape ; default 
 space_mode < escape ; default 
