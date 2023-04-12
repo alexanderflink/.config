@@ -5,7 +5,7 @@ return {
   { "tpope/vim-fugitive", cmd = "G" },
 
   -- coding stats
-  { "wakatime/vim-wakatime" },
+  { "wakatime/vim-wakatime", lazy = false },
 
   -- todo comments
   { "folke/todo-comments.nvim", config = true },
@@ -23,6 +23,7 @@ return {
   -- add more text objects, like functions and arguments
   {
     "echasnovski/mini.ai",
+    lazy = false,
     config = function()
       require("mini.ai").setup()
     end,
@@ -31,6 +32,7 @@ return {
   -- jump around with "s"
   {
     "ggandor/leap.nvim",
+    lazy = false,
     config = function()
       require("leap").add_default_mappings()
     end,
@@ -40,14 +42,15 @@ return {
   {
     "ggandor/flit.nvim",
     config = true,
+    lazy = false,
     dependencies = {
       "tpope/vim-repeat"
     }
   },
  
   -- smarter substitue, among other things
-  { "tpope/vim-abolish" },
+  { "tpope/vim-abolish", lazy = false },
 
   -- todo comments
-  { "folke/todo-comments.nvim", config = true },
+  { "folke/todo-comments.nvim", config = true, lazy = false },
 }
