@@ -117,11 +117,12 @@ space_mode < shift - 8 : skhd -k "escape"; yabai -m space --move 8
 space_mode < shift - 9 : skhd -k "escape"; yabai -m space --move 9
 
 # ------------------------------
-# SPACE MODE
+# DISPLAY MODE
 # ------------------------------
 
 # focus next / previous display
 display_mode < h : skhd -k "escape"; yabai -m display --focus next
 display_mode < l : skhd -k "escape"; yabai -m display --focus prev
 
+# toggle terminal space
 alt - space : ~/.config/yabai/toggle_to_window_space.sh $(yabai -m query --windows | jq '.[] | select(.app=="Alacritty") | .id')

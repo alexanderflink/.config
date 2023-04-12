@@ -43,14 +43,7 @@ sketchybar --default icon.font="Hack Nerd Font:Regular:13.0"  \
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces
 
-SPACE_ICONS=("󰖟" "" "" "4" "5" "6" "7" "8" "9" "10")
-
-declare -A SPACE_ICON_COLORS=(
-  ["󰖟"]="$NORD6"
-  [""]="$NORD15"
-  [""]="$NORD14"
-)
-
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
 
 for i in "${!SPACE_ICONS[@]}"
 do
@@ -58,15 +51,8 @@ do
   currentIcon=${SPACE_ICONS[i]}
   color=$NORD6
 
-  case $i in
-    0) color="$NORD8";;
-    1) color="$NORD15";;
-    2) color="$NORD14";;
-  esac
-
   sketchybar --add space space.$sid left                                 \
              --set space.$sid associated_space=$sid                      \
-                              icon.font="Hack Nerd Font:Regular:15.0"    \
                               icon=$currentIcon \
                               icon.color=$color \
                               background.color=$NORD3                \
@@ -74,8 +60,7 @@ do
                               background.height=20                       \
                               background.drawing=off                     \
                               label.drawing=off                          \
-                              script="$PLUGIN_DIR/space.sh"              \
-                              click_script="yabai -m space --focus $sid"
+                              script="$PLUGIN_DIR/space.sh"              
 done
 
 ##### Adding Left Items #####
