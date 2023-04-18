@@ -12,6 +12,5 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('config.global')
-require('config.lazy')
-
+require("config.global")
+require("config.lazy")

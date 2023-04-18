@@ -23,6 +23,6 @@ vim.opt.shiftwidth = 2
 
 -- global key mappings
 vim.keymap.set({ "i" }, "jk", "<Esc>")
-vim.keymap.set({ "n", "v" }, "J", "10j")
-vim.keymap.set({ "n", "v" }, "K", "10k")
-vim.keymap.set({ "n", "v" }, "<leader>j", "J", { desc = "Join lines" })
+-- vim.keymap.set({ "n", "v" }, "J", "10j")
+-- vim.keymap.set({ "n", "v" }, "K", "10k")
+-- vim.keymap.set({ "n", "v" }, "<leader>j", "J", { desc = "Join lines" })
