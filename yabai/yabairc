@@ -19,6 +19,7 @@ yabai -m config external_bar all:32:0
 yabai -m config top_padding 5
 
 # dont manage these apps
+yabai -m rule --add app="1Password" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="Microsoft Teams" manage=off
 yabai -m rule --add app="Pomatez" manage=off
