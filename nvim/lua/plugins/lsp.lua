@@ -26,15 +26,9 @@ return {
   config = function()
     local lsp = require("lsp-zero").preset("recommended")
 
-    -- set up formatting
-    lsp.format_on_save({
-      format_opts = {
-        timeout_ms = 10000,
-      },
-      servers = {
-        ["null-ls"] = { "javascript", "typescript", "lua" },
-      },
-    })
+    lsp.on_attach(function(client, bufnr)
+      lsp.buffer_autoformat()
+    end)
 
     -- snippets
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -84,13 +78,7 @@ return {
     require("mason-null-ls").setup({
       ensure_installed = nil,
       automatic_installation = true,
-      handlers = {
-        -- Here you can add functions to register sources.
-        -- See https://github.com/jay-babu/mason-null-ls.nvim#handlers-usage
-        --
-        -- If left empty, mason-null-ls will  use a "default handler"
-        -- to register all sources
-      },
+      handlers = {},
     })
   end,
 }
