@@ -112,3 +112,21 @@ themes {
 
 theme "nord"
 pane_frames false
+
+keybinds {
+  unbind "Ctrl o" "Ctrl h" "Ctrl n"
+
+  normal {
+    bind "Alt m" { SwitchToMode "move"; }
+    bind "Alt r" { SwitchToMode "resize"; }
+  }
+
+  move {
+    bind "Alt m" { SwitchToMode "normal"; }
+  }
+
+  resize {
+    bind "Alt r" { SwitchToMode "normal"; }
+  }
+
+}
