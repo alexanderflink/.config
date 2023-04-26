@@ -1,6 +1,10 @@
 -- debugging
 return {
   "mfussenegger/nvim-dap",
+  dependencies = {
+    "rcarriga/nvim-dap-ui",
+    config = true,
+  },
   config = function()
     local dap = require("dap")
 
@@ -22,5 +26,9 @@ return {
         webRoot = "${workspaceFolder}",
       },
     }
+
+    vim.keymap.set("n", "<leader>d", function()
+      local widget = require("dapui").toggle()
+    end)
   end,
 }
