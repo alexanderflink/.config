@@ -4,7 +4,6 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 # configure yabai
-yabai -m config window_gap 5
 yabai -m config layout bsp
 yabai -m config window_shadow float
 yabai -m config active_window_opacity 1
@@ -13,7 +12,11 @@ yabai -m config window_opacity on
 yabai -m config window_border_blur off
 yabai -m config window_border off
 yabai -m config external_bar all:32:0
-yabai -m config top_padding 5
+yabai -m config top_padding    20
+yabai -m config bottom_padding 20
+yabai -m config left_padding   20
+yabai -m config right_padding  20
+yabai -m config window_gap     10
 
 # dont manage these apps
 yabai -m rule --add app="^System Settings$" manage=off
