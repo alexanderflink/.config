@@ -62,11 +62,11 @@ return {
 
   -- animate scroll
   {
-    "karb94/neoscroll.nvim",
-    lazy = false,
-    config = true,
+    "declancm/cinnamon.nvim",
+    opts = {
+      max_length = 200,
+    },
   },
-
   -- nicer statusline
   {
     "nvim-lualine/lualine.nvim",
