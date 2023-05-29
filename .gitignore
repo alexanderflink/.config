@@ -6,3 +6,4 @@ sanity
 httpie/sessions
 httpie/version_info.json
 hammerspoon/statusbar/node_modules
+configstore
