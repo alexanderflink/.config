@@ -41,5 +41,8 @@ meh - f : yabai -m window --toggle zoom-fullscreen
 # toggle float
 meh - m : yabai -m window --toggle float
 
+# new space
+meh - n : yabai -m space --create
+
 # toggle terminal space
 alt - space : ~/.config/yabai/toggle_to_window_space.sh $(yabai -m query --windows | jq '.[] | select(.app=="Alacritty") | .id')
