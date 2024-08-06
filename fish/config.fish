@@ -9,6 +9,8 @@ end
 # eval (brew shellenv)
 fnm env --use-on-cd --log-level quiet | source
 
+set -gx EDITOR zed
+
 if status is-interactive
     # init prompt
     starship init fish | source
