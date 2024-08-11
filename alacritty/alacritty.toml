@@ -1,0 +1,15 @@
+import = ["/Users/alexanderflink/.config/alacritty/nord.toml"]
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[window]
+decorations = "buttonless"
+option_as_alt = "Both"
+
+[window.padding]
+x = 5
+y = 5
