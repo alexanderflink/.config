@@ -40,3 +40,7 @@ bindings = [
     # { key = "S",     mods = "Command|Alt", chars = "\uE171" },
     # { key = "T",     mods = "Command|Alt", chars = "\uE172" },
 ]
+
+[shell]
+program = "/opt/homebrew/bin/zellij"
+args = ["-l", "welcome"]

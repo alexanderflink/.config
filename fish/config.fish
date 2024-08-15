@@ -36,8 +36,8 @@ if status is-interactive
     # neovim
     abbr --add nv nvim .
 
-    # misc
-    abbr --add s say
+    # lazygit
+    abbr --add lg lazygit
 end
 
 function yy
