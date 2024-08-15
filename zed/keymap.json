@@ -14,7 +14,7 @@
       "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
     }
-  }
+  },
   // subword motions
   // breaks "ciw" for now. Try to enable later
   // {
@@ -26,4 +26,11 @@
   //     "g e": "vim::PreviousSubwordEnd"
   //   }
   // }
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-h": "pane::ActivatePrevItem",
+      "alt-l": "pane::ActivateNextItem"
+    }
+  }
 ]
