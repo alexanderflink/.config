@@ -1,6 +1,17 @@
-// Nightfox Theme:
-// https://github.com/edeneast/nightfox.nvim
 pane_frames true
+
+keybinds {
+    shared_except "locked" {
+        bind "" { NewTab; } // Cmd-T
+        bind "" { CloseFocus; } // Cmd-W
+        bind "" { MoveFocusOrTab "Left"; } // Cmd-H
+        bind "" { MoveFocusOrTab "Right"; } // Cmd-L
+        bind "" { MoveFocus "Down"; } // Cmd-J
+        bind "" { MoveFocus "Up"; } // Cmd-K
+        bind "" { SwitchToMode "renametab"; }
+        bind "" { NewPane; } // Cmd-N
+    }
+}
 
 themes {
   dayfox {

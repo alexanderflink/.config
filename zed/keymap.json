@@ -29,8 +29,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "alt-h": "pane::ActivatePrevItem",
-      "alt-l": "pane::ActivateNextItem"
+      "cmd-h": "pane::ActivatePrevItem",
+      "cmd-l": "pane::ActivateNextItem"
     }
   }
 ]

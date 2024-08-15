@@ -13,3 +13,30 @@ option_as_alt = "Both"
 [window.padding]
 x = 5
 y = 5
+
+[keyboard]
+
+bindings = [
+    { key = "H", mods = "Command", chars = "\uE000" },
+    { key = "L", mods = "Command", chars = "\uE001" },
+    { key = "K", mods = "Command", chars = "\uE002" },
+    { key = "J", mods = "Command", chars = "\uE003" },
+    # { key = "-",     mods = "Command",     chars = "\uE016" },
+    # { key = "+",     mods = "Command",     chars = "\uE017" },
+    # { key = "[",     mods = "Command",     chars = "\uE023" },
+    # { key = "]",     mods = "Command",     chars = "\uE024" },
+    # { key = "Enter", mods = "Command",     chars = "\uE026" },
+    # { key = "F",     mods = "Command",     chars = "\uE106" },
+    # { key = "G",     mods = "Command",     chars = "\uE107" },
+    # { key = "I",     mods = "Command",     chars = "\uE109" },
+    # { key = "P",     mods = "Command",     chars = "\uE116" },
+    # { key = "S",     mods = "Command",     chars = "\uE119" },
+    { key = "T", mods = "Command", chars = "\uE120" },
+    { key = "W", mods = "Command", chars = "\uE123" },
+    { key = "N", mods = "Command", chars = "\uE165" },
+    # { key = "O",     mods = "Command|Alt", chars = "\uE167" },
+    # { key = "P",     mods = "Command|Alt", chars = "\uE168" },
+    { key = "R", mods = "Command", chars = "\uE170" },
+    # { key = "S",     mods = "Command|Alt", chars = "\uE171" },
+    # { key = "T",     mods = "Command|Alt", chars = "\uE172" },
+]
