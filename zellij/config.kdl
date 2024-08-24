@@ -120,5 +120,5 @@ themes {
   }
 }
 
-theme "nord"
+// theme "nord"
 pane_frames false
