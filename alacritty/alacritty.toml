@@ -1,4 +1,4 @@
-import = ["/Users/alexanderflink/.config/alacritty/nord.toml"]
+import = ["~/.config/alacritty/catppuccin-frappe.toml"]
 
 [font]
 size = 13.0
