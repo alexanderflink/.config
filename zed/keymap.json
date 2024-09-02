@@ -7,14 +7,36 @@
 // from the command palette.
 [
   {
-    "context": "Dock",
     "bindings": {
-      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+      "cmd-e": "workspace::ToggleLeftDock",
+      "cmd-h": "pane::ActivatePrevItem",
+      "cmd-l": "pane::ActivateNextItem",
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "alt-shift-h": ["workspace::SwapPaneInDirection", "Left"],
+      "alt-shift-l": ["workspace::SwapPaneInDirection", "Right"],
+      "alt-shift-k": ["workspace::SwapPaneInDirection", "Up"],
+      "alt-shift-j": ["workspace::SwapPaneInDirection", "Down"],
+      "ctrl-p r": ["workspace::SwapPaneInDirection", "Down"]
     }
   },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-p k": "pane::SplitUp",
+      "ctrl-p j": "pane::SplitDown",
+      "ctrl-p h": "pane::SplitLeft",
+      "ctrl-p l": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-n": "workspace::NewTerminal"
+    }
+  }
   // subword motions
   // breaks "ciw" for now. Try to enable later
   // {
@@ -26,11 +48,4 @@
   //     "g e": "vim::PreviousSubwordEnd"
   //   }
   // }
-  {
-    "context": "Editor",
-    "bindings": {
-      "cmd-h": "pane::ActivatePrevItem",
-      "cmd-l": "pane::ActivateNextItem"
-    }
-  }
 ]
