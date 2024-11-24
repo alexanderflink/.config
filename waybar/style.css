@@ -1,0 +1,163 @@
+@define-color text #3b4252;
+@define-color text-focused #88c0d0;
+@define-color text-light #eceff4;
+@define-color bg #3b4252;
+@define-color purple #b48ead;
+@define-color green #a3be8c;
+@define-color yellow #ebcb8b;
+@define-color blue #81a1c1;
+@define-color orange #d08770;
+@define-color red #bf616a;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family:
+        SauceCodePro Nerd Font,
+        sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+window#waybar {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    background-color: transparent;
+    color: @text;
+}
+
+#workspaces {
+    margin-left: 20px;
+    background: @bg;
+    min-height: 0;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: @text-light;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    color: @text-focused;
+}
+
+#mode {
+}
+
+#custom-text {
+    font-size: 20px;
+}
+
+#workspaces,
+#clock,
+#battery,
+#temperature {
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+}
+
+#clock {
+    background-color: @purple;
+    color: @text-light;
+}
+
+#battery {
+    background-color: @green;
+    color: @text-light;
+}
+#battery.good {
+    background-color: @green;
+}
+#battery.warning {
+    background-color: @yellow;
+}
+#battery.critical {
+    background-color: @red;
+}
+#battery.charging,
+#battery.plugged {
+    background-color: @blue;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#disk {
+}
+
+#backlight {
+    padding: 0;
+    margin: 0 5px;
+}
+
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#custom-media {
+}
+
+#custom-media.custom-spotify {
+}
+
+#custom-media.custom-vlc {
+}
+
+#temperature {
+    background-color: @orange;
+    color: @text-light;
+}
+
+#mpd {
+}
+
+#mpd.disconnected {
+}
+
+#mpd.stopped {
+}
+
+#mpd.paused {
+}
+
+#scratchpad {
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}

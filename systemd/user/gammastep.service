@@ -1,0 +1,10 @@
+[Unit]
+Description=Gammastep
+
+[Service]
+Type=simple
+ExecStart=gammastep
+Restart=always
+
+[Install]
+WantedBy=default.target

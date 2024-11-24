@@ -1,0 +1,11 @@
+[Unit]
+Description=Homebrew generated unit for mpd
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart=/home/linuxbrew/.linuxbrew/opt/mpd/bin/mpd --no-daemon
+Restart=always
+WorkingDirectory=/home/linuxbrew/.linuxbrew

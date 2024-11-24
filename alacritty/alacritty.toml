@@ -1,0 +1,15 @@
+[general]
+import = ["~/.config/alacritty/nord.toml"]
+
+[window]
+padding = { x = 10, y = 10 }
+
+[terminal]
+shell = "fish"
+
+
+[keyboard]
+bindings = [
+    { key = "c", action = "Copy", mods = "Super" },
+    { key = "v", action = "Paste", mods = "Super" },
+]

@@ -1,0 +1,18 @@
+
+
+configuration {
+    show-icons: true;
+    drun-display-format: "{name}";
+    display-drun: "";
+    font: "Source Code Pro Nerd Font 16";
+}
+
+@theme "~/.config/rofi/nord.rasi"
+
+listview {
+	lines: 6;
+}
+
+window {
+	width: 30%;
+}
