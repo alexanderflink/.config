@@ -11,7 +11,7 @@ client.urgent           #ebcb8b #ebcb8b #2e3440 #b48ead   #ebcb8b
 #
 # Read `man 5 sway` for a complete reference.
 
-default_border pixel 1
+default_border pixel 0
 
 font pango:SauceCodePro Nerd Font Bold 10
 
@@ -72,6 +72,14 @@ workspace 3 output DP-3
 assign [app_id=brave-browser] workspace 1
 assign [app_id=Alacritty] workspace 2
 assign [app_id=dev.zed.Zed] workspace 2
+
+for_window [app_id=dev.zed.Zed] {
+    opacity  0.95
+}
+
+for_window [app_id=Alacritty] {
+    opacity  0.95
+}
 
 ### Idle configuration
 #
@@ -189,6 +197,10 @@ assign [app_id=dev.zed.Zed] workspace 2
       floating enable
       move to scratchpad
       scratchpad show
+      resize set 100ppt 30ppt
+      move position 0 -28px
+      opacity 0.95
+      layout tabbed
     }
 
     # Toggle the current focus between tiling and floating mode
