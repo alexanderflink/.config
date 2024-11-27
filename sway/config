@@ -11,7 +11,7 @@ client.urgent           #ebcb8b #ebcb8b #2e3440 #b48ead   #ebcb8b
 #
 # Read `man 5 sway` for a complete reference.
 
-default_border pixel 0
+default_border pixel 1
 
 font pango:SauceCodePro Nerd Font Bold 10
 
@@ -197,7 +197,7 @@ for_window [app_id=Alacritty] {
       floating enable
       move to scratchpad
       scratchpad show
-      resize set 100ppt 30ppt
+      resize set 100ppt 70ppt
       move position 0 -28px
       opacity 0.95
       layout tabbed

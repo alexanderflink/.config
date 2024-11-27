@@ -8,7 +8,6 @@ if status is-interactive
     starship init fish | source
 
     if env | grep -q "HOSTNAME=toolbx"
-        cd ~
     end
 
 end
