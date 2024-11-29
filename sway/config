@@ -57,6 +57,8 @@ output DP-3 resolution 1050x1680 scale 1.5
 # Keyboard layout
 input type:keyboard {
     xkb_layout us,swerty
+    repeat_rate 50
+    repeat_delay 250
 }
 
 bindsym Ctrl+Space exec swaymsg input type:keyboard xkb_switch_layout next
@@ -125,7 +127,7 @@ for_window [app_id=Alacritty] {
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    # floating_modifier $mod normal
+    floating_modifier Super normal
 
 # Moving around:
 #
@@ -189,18 +191,21 @@ for_window [app_id=Alacritty] {
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
+    bindsym Super+Tab workspace back_and_forth
+
     # open a floating terminal
     set $floating-terminal-id floating-terminal
-    bindsym $mod+space exec swaymsg '[app_id="$floating-terminal-id"] scratchpad show' || $term --class $floating-terminal-id,$floating-terminal-id
+
+    bindsym $mod+space exec swaymsg '[app_id="$floating-terminal-id"] scratchpad show' \
+    || $term --class $floating-terminal-id,$floating-terminal-id
 
     for_window [app_id=$floating-terminal-id] {
       floating enable
       move to scratchpad
       scratchpad show
-      resize set 100ppt 70ppt
+      resize set 100ppt 60ppt
       move position 0 -28px
       opacity 0.95
-      layout tabbed
     }
 
     # Toggle the current focus between tiling and floating mode

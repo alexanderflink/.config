@@ -1,0 +1,38 @@
+FROM registry.fedoraproject.org/fedora-toolbox:41
+
+LABEL name="alexanderflink/dev-toolbox" \
+    summary="Development toolbox" \
+    maintainer="Alexander Flink"
+
+# Install dnf packages
+RUN dnf -y copr enable atim/lazygit \
+    && dnf -y update \
+    && dnf -y install \
+    bat \
+    cargo \
+    cmake \
+    fish \
+    fzf \
+    httpie \
+    jq \
+    lazygit \
+    nodejs22 \
+    python3 \
+    ripgrep \
+    ripgrep \
+    ruby \
+    rust \
+    timew \
+    tldr \
+    pnpm \
+    zoxide
+
+# Install rust packages
+ENV CARGO_HOME=/usr/local/.cargo
+RUN cargo install --locked starship yazi-fm yazi-cli
+ENV PATH=$PATH:$CARGO_HOME/bin
+
+# Set up environment
+COPY ./env.fish /etc/env.fish
+ENV EDITOR=vi
+ENV SHELL=/usr/bin/fish

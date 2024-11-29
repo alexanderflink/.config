@@ -1,13 +1,19 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-
-    # Homebrew
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-    # Starship prompt
-    starship init fish | source
-
     if env | grep -q "HOSTNAME=toolbx"
-    end
+        # This only runs inside toolbox containers
 
+        # Run container environment file
+        if test -e /etc/env.fish
+            source /etc/env.fish
+        end
+    else
+        # Homebrew
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+        # starship prompt
+        starship init fish | source
+
+        # z to jump around directories
+        zoxide init fish | source
+    end
 end

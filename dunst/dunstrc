@@ -9,6 +9,7 @@ origin = top-center
 offset = 0x0
 layer = top
 font = pango:SauceCodePro Nerd Font 9
+follow = keyboard
 
 [urgency_low]
     background = "#4c566a"
