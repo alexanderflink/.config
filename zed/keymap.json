@@ -148,6 +148,7 @@
       "super-p": "file_finder::Toggle",
       "ctrl-tab": "tab_switcher::Toggle",
       "super-shift-e": "project_panel::ToggleFocus",
+      "super-e": "workspace::ToggleLeftDock",
       "super-?": "assistant::ToggleFocus",
       "escape": "workspace::Unfollow",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
