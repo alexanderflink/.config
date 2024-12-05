@@ -11,9 +11,13 @@ client.urgent           #ebcb8b #ebcb8b #2e3440 #b48ead   #ebcb8b
 #
 # Read `man 5 sway` for a complete reference.
 
-default_border pixel 1
+default_border pixel 2
+
+exec_always keyd-application-mapper -d
 
 font pango:SauceCodePro Nerd Font Bold 10
+
+focus_on_window_activation focus
 
 ### Variables
 #
@@ -51,8 +55,8 @@ output * bg ~/wallpaper_6.jpg fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output eDP-1 mode 2880x1920@120Hz scale 2.2
-output DP-3 resolution 1050x1680 scale 1.5
+output eDP-1 mode 2880x1920@120Hz scale 2
+output DP-3 scale 1.5
 
 # Keyboard layout
 input type:keyboard {
@@ -142,9 +146,7 @@ for_window [app_id=Alacritty] {
     bindsym Super+$mod+$down move down
     bindsym Super+$mod+$up move up
     bindsym Super+$mod+$right move right
-#
-# Workspaces:
-#
+
     # Switch to workspace
     bindsym $mod+q workspace number 1
     bindsym $mod+w workspace number 2
@@ -173,20 +175,13 @@ for_window [app_id=Alacritty] {
     bindsym $mod+Shift+Super+h move workspace to output left
     bindsym $mod+Shift+Super+l move workspace to output right
 
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    # bindsym $mod+b splith
-    # bindsym $mod+v splitv
-
     # Switch the current container between different layout styles
     bindsym $mod+a layout stacking
     bindsym $mod+s layout tabbed
     bindsym $mod+d layout toggle split
     bindsym $mod+v splitv
     bindsym $mod+b splith
+    bindsym $mod+n split none
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -195,43 +190,23 @@ for_window [app_id=Alacritty] {
 
     # open a floating terminal
     set $floating-terminal-id floating-terminal
+    set $floating-term-resize resize set 100ppt 100ppt
+    set $floating-term-move move position 0 0
 
-    bindsym $mod+space exec swaymsg '[app_id="$floating-terminal-id"] scratchpad show' \
-    || $term --class $floating-terminal-id,$floating-terminal-id
+    bindsym $mod+space exec 'swaymsg [app_id=$floating-terminal-id] scratchpad show \
+    || $term --class $floating-terminal-id,$floating-terminal-id && swaymsg [app_id=$floating-terminal-id] "$floating-term-resize,$floating-term-move"'
 
     for_window [app_id=$floating-terminal-id] {
       floating enable
       move to scratchpad
       scratchpad show
-      resize set 100ppt 60ppt
-      move position 0 -28px
+      $floating-term-resize
+      $floating-term-move
+      border none
       opacity 0.95
     }
 
-    # Toggle the current focus between tiling and floating mode
-    # bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    # bindsym $mod+space focus mode_toggle
-
-    # Move focus to the parent container
-    # bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    # bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    # bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
-#
-mode "resize" {
+    mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height

@@ -22,6 +22,7 @@
     "battery",
     "sway/language",
     "clock",
+    "tray",
   ],
   // Modules configuration
   "sway/window": {

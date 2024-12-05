@@ -19,20 +19,29 @@ RUN dnf -y copr enable atim/lazygit \
     nodejs22 \
     python3 \
     ripgrep \
-    ripgrep \
     ruby \
     rust \
     timew \
     tldr \
     pnpm \
-    zoxide
+    zoxide \
+    glances \
+    && dnf clean all
 
 # Install rust packages
 ENV CARGO_HOME=/usr/local/.cargo
 RUN cargo install --locked starship yazi-fm yazi-cli
 ENV PATH=$PATH:$CARGO_HOME/bin
 
+# Install npm packages
+ENV PNPM_HOME=/usr/local/share/pnpm
+RUN mkdir -p /usr/local/share/pnpm
+
+RUN pnpm install -g \
+    vercel
+
 # Set up environment
 COPY ./env.fish /etc/env.fish
+ENV HOSTNAME=dev-toolbox
 ENV EDITOR=vi
 ENV SHELL=/usr/bin/fish

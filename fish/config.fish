@@ -1,5 +1,5 @@
 if status is-interactive
-    if env | grep -q "HOSTNAME=toolbx"
+    if env | grep -q "HOSTNAME=dev-toolbox"
         # This only runs inside toolbox containers
 
         # Run container environment file

@@ -84,10 +84,10 @@
     "context": "Editor && mode == full",
     "bindings": {
       "enter": "editor::Newline",
-      "shift-enter": "editor::Newline",
-      "super-enter": "editor::NewlineAbove",
       "super-shift-enter": "editor::NewlineBelow",
-      "super-f": "buffer_search::Deploy"
+      "super-f": "buffer_search::Deploy",
+      "super-enter": "editor::OpenExcerpts",
+      "shift-enter": "editor::ExpandExcerpts"
     }
   },
   {

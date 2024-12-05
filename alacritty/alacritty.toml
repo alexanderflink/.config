@@ -5,7 +5,7 @@ import = ["~/.config/alacritty/nord.toml"]
 padding = { x = 10, y = 10 }
 
 [terminal]
-shell = "fish"
+shell = "/usr/bin/fish"
 
 
 [keyboard]
